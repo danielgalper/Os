@@ -15,7 +15,7 @@ char *buffer;
 void print_string(int count) {
     int was_writed = 0;
     while (was_writed < count) {
-        int cur += write(1, buffer + was_writed, count - was_writed);    
+        int cur = write(1, buffer + was_writed, count - was_writed);    
         if (cur > 0) {
             was_writed += cur;
         }
