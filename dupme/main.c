@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 int string_to_int(char *s) {
     int res = 0;
