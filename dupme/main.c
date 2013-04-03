@@ -13,11 +13,11 @@ int string_to_int(char *s) {
 char *buffer;
 
 void print_string(int count) {
-    int was_writed = 0;
-    while (was_writed < count) {
-        int cur = write(1, buffer + was_writed, count - was_writed);    
+    int was_written = 0;
+    while (was_written < count) {
+        int cur = write(1, buffer + was_written, count - was_written);    
         if (cur > 0) {
-            was_writed += cur;
+            was_written += cur;
         }
     }
 }
