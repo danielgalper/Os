@@ -32,6 +32,11 @@ int main(int argc, char* argv[]) {
        if (read_result < 0) return 1;
 
        if (read_result == 0) {
+           if (len != 0 && len <= k && state == PRINT) {
+               buffer[len] = '\n';
+               print_string(len + 1);
+               print_string(len + 1);
+           }
            break;
        }
        
