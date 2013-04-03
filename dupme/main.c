@@ -11,6 +11,13 @@ int string_to_int(char *s) {
     return res;
 }
 
+void write(int count) {
+    int was_writed = 0;
+    while (was_writed < count) {
+        was_writed += write(1, buffer + was_writed, count - was_writed);    
+    }
+}
+
 int main(int argc, char* argv[]) {
    int k = string_to_int(argv[1]);
    int PRINT = 0, NO_PRINT = 1;
@@ -26,10 +33,9 @@ int main(int argc, char* argv[]) {
            int i = len;
            for (; i < len + read_result; i++) {
                if (buffer[i] == '\n') {
-                   buffer[i] = 0;
                    if (state == PRINT) {
-                     write();
-                     write();
+                     write(i + 1);
+                     write(i + 1);
                    } else if (state == NO_PRINT) {
                    }
                }
