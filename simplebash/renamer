@@ -1,0 +1,11 @@
+#!/bin/bash
+Files="$@"
+for f in $Files
+do
+    if [ -f "$f" ]
+    then
+         echo 'basename "$f"'
+         read input   
+         mv $f $input
+     fi 
+done 
